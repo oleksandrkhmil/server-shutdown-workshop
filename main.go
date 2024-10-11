@@ -17,7 +17,7 @@ func main() {
 	engine := gin.Default()
 	engine.GET("/v1/resource", func(c *gin.Context) {
 		slog.Info("Received request")
-		time.Sleep(10 * time.Second)
+		time.Sleep(10 * time.Second) // Long processing...
 		slog.Info("Processed request")
 		c.JSON(http.StatusOK, gin.H{"message": "Request processed"})
 	})
